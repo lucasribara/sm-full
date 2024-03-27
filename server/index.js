@@ -14,6 +14,8 @@ import postRoutes from "./routes/posts.js";
 import { register } from "./controllers/auth.js";
 import { createPost } from "./controllers/posts.js"
 import { verifyToken } from "./middleware/auth.js";
+///When it fits, add the user and posts data
+//Backend Data Add and Demo
 
 //configs
 const __filename = fileURLToPath(import.meta.url);
@@ -47,10 +49,10 @@ app.post("/posts", verifyToken, upload.single("picture"), createPost);
 //routes
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
-app.use("posts", postRoutes);
+app.use("/posts", postRoutes);
 
 //mongoose setup
-
+//co
 const PORT = process.env.PORT || 6001;
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
